@@ -9,10 +9,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 </head>
-<body style="overflow-x:hidden;">
+<body style="overflow-x:hidden;" class="flex flex-col h-screen justify-between">
 {% include 'includes/header.html' %}
-{% block posts %}
-{% endblock %}
+    <main class="mb-auto">
+    {% block content %}
+    {% endblock %}
+    </main>
 {% include 'includes/footer.html' %}
 
 {# A library for handling pop-up modal windows from the header.html page #}

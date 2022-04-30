@@ -1,15 +1,13 @@
-from django.shortcuts import render
 from django.views import generic
 
 from blog.models import Post
 
 
-def blog_index(request):
-    return render(request, 'blog/base.html', context={})
-
-
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    # queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.all()
+    context_object_name = 'post_list'
+    paginate_by = 6
     template_name = 'blog/base.html'
 
 

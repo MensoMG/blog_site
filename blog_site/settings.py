@@ -44,6 +44,7 @@ EXTERNAL_APPS = [
 
 DEV_APPS = [
     'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + DEV_APPS
