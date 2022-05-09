@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-tvs$onck9zz9=*78bclt@-2_f87y6*r_1c0*jpzw7e$x&bxt(x
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', ]
-
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -39,7 +41,7 @@ DJANGO_APPS = [
 ]
 
 EXTERNAL_APPS = [
-
+    'debug_toolbar',
 ]
 
 DEV_APPS = [
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'blog_site.urls'

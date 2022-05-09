@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{ author.user.username }}{% endblock %}
+
+{% block content %}
+    <div class="profile">
+        <div>{{ author.user.username }}</div>
+        {# TODO: get_context_data для вывода публикаций пользователя: #}
+        {# https://docs.djangoproject.com/en/4.0/topics/class-based-views/generic-display/#adding-extra-context-1 #}
+    </div>
+{% endblock %}
