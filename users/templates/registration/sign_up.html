@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="container flex justify-center">
+    <form method="POST" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        <div class="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
+          Blog Login
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-normal mb-2 bg" for="{{ form.username.auto_id }}">{{ form.username.label }}</label>
+            {{ form.username }}
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-normal mb-2" for="{{ form.password1.auto_id }}">{{ form.password1.label }}</label>
+            {{ form.password1 }}
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-normal mb-2" for="{{ form.password2.auto_id }}">{{ form.password2.label }}</label>
+            {{ form.password2 }}
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign Up</button>
+            <a
+            class="inline-block align-baseline font-normal text-sm text-blue-500 hover:text-blue-800"
+            href="#">
+            Forgot Password?
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
